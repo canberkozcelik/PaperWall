@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Paperwall</string>
+    <string name="tap_to_open">Tap anywhere to open photos.</string>
+    <string name="read_extarnal_permission_rationale">I need this permission to let you choose images from your photos.</string>
+    <string name="read_extarnal_permission_denied">In order to use this application, you must provide necessary permissions.</string>
+    <string name="chooser_select_picture">Select pictures</string>
+    <string name="ok">OK</string>
+    <string name="app_info">I will loop through the pictures you have chosen and change the wallpaper on daily basis.</string>
+    <string name="change_wallpaper_warning">Changes may take a while to be completed varying on your device specs.</string>
+    <string name="change_wallpaper_finished">Changes have been saved.</string>
+    <string name="change_wallpaper_scheduled">Scheduled.</string>
+</resources>
