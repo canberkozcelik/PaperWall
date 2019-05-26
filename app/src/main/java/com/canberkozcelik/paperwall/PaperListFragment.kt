@@ -17,7 +17,6 @@ import androidx.work.*
 import com.canberkozcelik.paperwall.databinding.FragmentPaperListBinding
 import java.util.*
 import java.util.concurrent.TimeUnit
-import kotlin.concurrent.schedule
 
 /**
  * Created by canberkozcelik on 24.03.2019.
@@ -69,7 +68,7 @@ class PaperListFragment : Fragment() {
         if (selectedImageUris?.size == 1) {
             return
         }
-        val setWpPeriodicRequest = PeriodicWorkRequestBuilder<PaperWallWorker>(15, TimeUnit.MINUTES)
+        val setWpPeriodicRequest = PeriodicWorkRequestBuilder<PaperWallWorker>(24, TimeUnit.HOURS)
             .setConstraints(buildConstraints())
             .addTag(TAG_SET_WP_PERIODIC)
             .setInputData(createInputDataForUris(selectedImageUris))
@@ -94,11 +93,8 @@ class PaperListFragment : Fragment() {
     }
 
     private fun showWorkScheduled() {
-        binding.selectedPaperContent.visibility = View.GONE
-        binding.successContent.visibility = View.VISIBLE
-        Timer().schedule(3000) {
-            Navigation.findNavController(view!!).navigate(R.id.action_paper_list_to_wall)
-        }
+        fragmentManager?.popBackStack()
+        Navigation.findNavController(view!!).navigate(R.id.action_paper_list_to_success)
     }
 
     private fun buildConstraints(): Constraints {

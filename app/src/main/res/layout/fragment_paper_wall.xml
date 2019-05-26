@@ -10,6 +10,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:onClick="anywhereClicked">
@@ -18,16 +19,16 @@
             android:id="@+id/text_app_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginRight="8dp"
             android:layout_marginBottom="48dp"
-            android:text="@string/app_info"
             android:gravity="center"
+            android:text="@string/app_info"
             android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/icon_photo_library"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/icon_photo_library" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/icon_photo_library"
@@ -43,9 +44,9 @@
             android:id="@+id/text_tap_anywhere"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginRight="8dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"
             android:text="@string/tap_to_open"
