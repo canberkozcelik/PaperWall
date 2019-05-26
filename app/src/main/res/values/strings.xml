@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Paperwall</string>
+    <string name="app_name">PaperWall</string>
     <string name="tap_to_open">Tap anywhere to open photos.</string>
     <string name="read_extarnal_permission_rationale">I need this permission to let you choose images from your photos.</string>
     <string name="read_extarnal_permission_denied">In order to use this application, you must provide necessary permissions.</string>
@@ -9,4 +9,6 @@
     <string name="change_wallpaper_warning">Changes may take a while to be completed varying on your device specs.</string>
     <string name="change_wallpaper_finished">Changes have been saved.</string>
     <string name="change_wallpaper_scheduled">Scheduled.</string>
+    <string name="success_image_content_description">Man showing his thumb for successed result</string>
+    <string name="success_icon_content_description">Orange scheduled icon showing your selections has successfully scheduled.</string>
 </resources>
