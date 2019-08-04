@@ -1,16 +1,19 @@
-package com.canberkozcelik.paperwall
+package com.canberkozcelik.paperwall.paperwall
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.fragment.app.Fragment
+import com.canberkozcelik.paperwall.base.BasePresenter
+import com.canberkozcelik.paperwall.base.BaseView
 
 /**
  * Created by canberkozcelik on 2019-05-26.
  */
 class PaperWallContract {
 
-    interface View : BaseView<Presenter> {
+    interface View :
+        BaseView<Presenter> {
 
         fun getFragment() : Fragment
 

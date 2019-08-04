@@ -1,4 +1,4 @@
-package com.canberkozcelik.paperwall
+package com.canberkozcelik.paperwall.paperlist
 
 import android.net.Uri
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.canberkozcelik.paperwall.R
 import java.util.*
 
 /**

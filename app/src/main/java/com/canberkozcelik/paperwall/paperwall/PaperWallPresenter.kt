@@ -1,7 +1,8 @@
-package com.canberkozcelik.paperwall
+package com.canberkozcelik.paperwall.paperwall
 
 import android.content.Intent
 import android.net.Uri
+import com.canberkozcelik.paperwall.R
 import pub.devrel.easypermissions.EasyPermissions
 
 /**

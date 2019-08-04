@@ -1,4 +1,4 @@
-package com.canberkozcelik.paperwall
+package com.canberkozcelik.paperwall.paperlist
 
 import android.net.Uri
 import android.os.Build
@@ -14,7 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.work.*
+import com.canberkozcelik.paperwall.R
 import com.canberkozcelik.paperwall.databinding.FragmentPaperListBinding
+import com.canberkozcelik.paperwall.paperwall.PaperWallWorker
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -33,7 +35,8 @@ class PaperListFragment : Fragment() {
     private lateinit var binding: FragmentPaperListBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_paper_list, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_paper_list, container, false)
         return binding.root
     }
 

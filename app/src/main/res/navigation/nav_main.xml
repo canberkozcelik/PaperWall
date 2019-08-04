@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/paper_wall"
-        android:name="com.canberkozcelik.paperwall.PaperWallFragment"
+        android:name="com.canberkozcelik.paperwall.paperwall.PaperWallFragment"
         android:label="fragment_paper_wall"
         tools:layout="@layout/fragment_paper_wall">
 
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/paper_list"
-        android:name="com.canberkozcelik.paperwall.PaperListFragment"
+        android:name="com.canberkozcelik.paperwall.paperlist.PaperListFragment"
         android:label="fragment_paper_list"
         tools:layout="@layout/fragment_paper_list">
 
@@ -33,7 +33,12 @@
 
     <fragment
         android:id="@+id/success_page"
-        android:name="com.canberkozcelik.paperwall.SuccessPageFragment"
+        android:name="com.canberkozcelik.paperwall.successpage.SuccessPageFragment"
         android:label="fragment_success_page"
-        tools:layout="@layout/fragment_success_page" />
+        tools:layout="@layout/fragment_success_page" >
+        <action
+            android:id="@+id/action_success_page_to_paper_wall"
+            app:popUpToInclusive="true"
+            app:destination="@id/paper_wall" />
+    </fragment>
 </navigation>

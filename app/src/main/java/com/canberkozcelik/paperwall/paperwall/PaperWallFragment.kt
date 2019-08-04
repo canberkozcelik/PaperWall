@@ -1,4 +1,4 @@
-package com.canberkozcelik.paperwall
+package com.canberkozcelik.paperwall.paperwall
 
 import android.content.Context
 import android.content.Intent
@@ -11,7 +11,11 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.canberkozcelik.paperwall.R
 import com.canberkozcelik.paperwall.databinding.FragmentPaperWallBinding
+import com.canberkozcelik.paperwall.helper.setOnSafeClickListener
+import com.canberkozcelik.paperwall.paperlist.PaperListFragment
+import timber.log.Timber
 
 
 class PaperWallFragment : Fragment(), PaperWallContract.View {
@@ -26,7 +30,8 @@ class PaperWallFragment : Fragment(), PaperWallContract.View {
     private lateinit var binding: FragmentPaperWallBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_paper_wall, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_paper_wall, container, false)
         return binding.root
     }
 
@@ -38,7 +43,7 @@ class PaperWallFragment : Fragment(), PaperWallContract.View {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         presenter = PaperWallPresenter(this)
-        binding.root.setOnClickListener { presenter.initPermissions() }
+        binding.root.setOnSafeClickListener { presenter.initPermissions() }
     }
 
     override fun showLanding() {
@@ -59,9 +64,13 @@ class PaperWallFragment : Fragment(), PaperWallContract.View {
     }
 
     override fun navigateToPaperList(selectedImageUris: ArrayList<Uri?>) {
-        val args = Bundle()
-        args.putParcelableArrayList(PaperListFragment.ARG_SELECTED_IMAGE_LIST, selectedImageUris)
-        Navigation.findNavController(view!!).navigate(R.id.action_paper_wall_to_list, args)
+        try {
+            val args = Bundle()
+            args.putParcelableArrayList(PaperListFragment.ARG_SELECTED_IMAGE_LIST, selectedImageUris)
+            Navigation.findNavController(view!!).navigate(R.id.action_paper_wall_to_list, args)
+        } catch (e: Exception) {
+            Timber.e(e)
+        }
     }
 
     override fun showPermissionDenied() {

@@ -1,4 +1,4 @@
-package com.canberkozcelik.paperwall
+package com.canberkozcelik.paperwall.helper
 
 /**
  * Created by canberkozcelik on 27.03.2019.

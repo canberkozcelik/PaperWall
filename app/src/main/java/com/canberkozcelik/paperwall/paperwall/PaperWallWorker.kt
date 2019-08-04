@@ -1,4 +1,4 @@
-package com.canberkozcelik.paperwall
+package com.canberkozcelik.paperwall.paperwall
 
 import android.app.WallpaperManager
 import android.content.Context
@@ -10,6 +10,7 @@ import androidx.work.WorkerParameters
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
+import com.canberkozcelik.paperwall.helper.SharedPrefHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -29,10 +30,12 @@ class PaperWallWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, para
         return try {
             val appContext = applicationContext
             val selectedImagesStr = inputData.getStringArray(KEY_IMAGE_STRINGS)
-            var selectedIndex = SharedPrefHelper(appContext).getDataInt(KEY_DATA_INT_SELECTED_INDEX, 0)
+            var selectedIndex = SharedPrefHelper(appContext)
+                .getDataInt(KEY_DATA_INT_SELECTED_INDEX, 0)
             selectedIndex++
             selectedIndex = (selectedIndex == selectedImagesStr?.size).let { 0 }
-            SharedPrefHelper(appContext).putData(KEY_DATA_INT_SELECTED_INDEX, selectedIndex)
+            SharedPrefHelper(appContext)
+                .putData(KEY_DATA_INT_SELECTED_INDEX, selectedIndex)
             Glide.with(appContext)
                 .asBitmap()
                 .load(selectedImagesStr?.get(selectedIndex))
