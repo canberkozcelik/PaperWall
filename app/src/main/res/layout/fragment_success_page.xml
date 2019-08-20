@@ -14,8 +14,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:contentDescription="@string/success_image_content_description"
-            android:src="@drawable/d"
             app:layout_constraintBottom_toTopOf="@+id/text_scheduled"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -56,11 +54,11 @@
 
         <TextView
             android:id="@+id/text_change_wallpaper_warning"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="32dp"
             android:gravity="center"
             android:text="@string/change_wallpaper_warning"
             app:layout_constraintBottom_toBottomOf="parent"
