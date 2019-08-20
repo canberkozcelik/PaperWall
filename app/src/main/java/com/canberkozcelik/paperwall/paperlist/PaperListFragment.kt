@@ -45,7 +45,7 @@ class PaperListFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val workManager: WorkManager = WorkManager.getInstance()
+        val workManager: WorkManager = WorkManager.getInstance(context!!)
         val selectedImageUris = arguments?.getParcelableArrayList<Uri>(ARG_SELECTED_IMAGE_LIST)
         paperListAdapter = PaperListAdapter(selectedImageUris)
         binding.selectedPaperList.apply {
