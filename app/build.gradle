@@ -85,8 +85,14 @@ dependencies {
     // permission
     implementation "pub.devrel:easypermissions:$versions.permissionsVersion"
 
+    // orbit mvi
+    implementation "com.babylon.orbit2:orbit-core:$versions.orbitVersion"
+    implementation "com.babylon.orbit2:orbit-coroutines:$versions.orbitVersion"
+    implementation "com.babylon.orbit2:orbit-viewmodel:$versions.orbitVersion"
+
     // groupie
     implementation "com.xwray:groupie:$versions.groupieVersion"
+    implementation "com.xwray:groupie-viewbinding:$versions.groupieVersion"
     implementation "com.xwray:groupie-kotlin-android-extensions:$versions.groupieVersion"
 
     // startup

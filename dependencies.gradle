@@ -19,6 +19,9 @@ ext.versions = [
         // permissions
         permissionsVersion   : '3.0.0',
 
+        // orbit
+        orbitVersion         : '2.1.0',
+
         // groupie
         groupieVersion       : '2.8.1',
 

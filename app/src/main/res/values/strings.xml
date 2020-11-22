@@ -11,4 +11,6 @@
     <string name="change_wallpaper_scheduled">Scheduled.</string>
     <string name="success_image_content_description">Man showing his thumb for successed result</string>
     <string name="success_icon_content_description">Orange scheduled icon showing your selections has successfully scheduled.</string>
+    <string name="no_image_selected">You have not select any image.</string>
+    <string name="icon_library">Photo library icon</string>
 </resources>

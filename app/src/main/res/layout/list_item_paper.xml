@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:elevation="4dp"
-    app:cardElevation="4dp"
-    app:cardMaxElevation="4dp"
-    app:cardBackgroundColor="@color/cardBackgroundColor"
-    android:layout_margin="8dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/image_paper"
+    <data>
+        <variable
+            name="imageUri"
+            type="android.net.Uri" />
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        tools:src="@drawable/d" />
-</androidx.cardview.widget.CardView>
+        android:layout_margin="8dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@color/cardBackgroundColor"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="4dp">
+
+        <ImageView
+            android:id="@+id/image_paper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            setImageForUri="@{imageUri}"
+            tools:src="@drawable/launch_screen" />
+    </androidx.cardview.widget.CardView>
+</layout>
