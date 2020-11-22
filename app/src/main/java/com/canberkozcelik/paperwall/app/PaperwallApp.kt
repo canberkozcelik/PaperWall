@@ -1,18 +1,11 @@
 package com.canberkozcelik.paperwall.app
 
 import android.app.Application
-import com.canberkozcelik.paperwall.BuildConfig
-import timber.log.Timber
+import dagger.hilt.android.HiltAndroidApp
 
 /**
  * Created by canberkozcelik on 24.03.2019.
+ * Updated by canberkozcelik on 22.11.2020.
  */
-class PaperwallApp : Application() {
-
-    override fun onCreate() {
-        super.onCreate()
-        if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-        }
-    }
-}
+@HiltAndroidApp
+class PaperwallApp : Application()

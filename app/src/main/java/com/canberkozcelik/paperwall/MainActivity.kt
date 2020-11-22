@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         adView.loadAd(adRequest)
 
         mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd.adUnitId = "<ENTER YOUR OWN>"
+        mInterstitialAd.adUnitId = "<ENTER_YOUR_UNIT_ID>"
         mInterstitialAd.loadAd(AdRequest.Builder().build())
         mInterstitialAd.adListener = object : AdListener() {
 

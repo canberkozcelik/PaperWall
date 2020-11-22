@@ -1,17 +1,25 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <fragment
-        android:id="@+id/my_nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_main" />
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_main"
+            tools:ignore="FragmentTagUsage" />
+
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
@@ -19,5 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|bottom"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ENTER YOUR OWN"/>
-</FrameLayout>
+        ads:adUnitId="<ENTER_YOUR_UNIT_ID>"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
