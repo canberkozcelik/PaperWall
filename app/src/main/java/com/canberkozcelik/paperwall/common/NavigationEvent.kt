@@ -1,3 +1,0 @@
-package com.canberkozcelik.paperwall.common
-
-interface NavigationEvent
